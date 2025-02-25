@@ -1,0 +1,43 @@
+{
+  "language": "English",
+  "footer": {
+    "copyright": "Copyright © 2025 Impart Lab.Org",
+    "about": {
+      "aboutServer": "About",
+      "guidebook": "Guidebook",
+      "announcement": "Announcement",
+      "moment": "Hermitage"
+    },
+    "status": {
+      "status": "Status",
+      "serverStatus": "Server status",
+      "worldMap": "World map"
+    },
+    "support": {
+      "support": "Support",
+      "joinUs": "Join us",
+      "suggest": "Suggest",
+      "issue": "Issue",
+      "report": "Report"
+    },
+    "contribute": {
+      "contribute": "Contribute",
+      "contributor": "Contributor",
+      "donate": "Donate"
+    },
+    "community": {
+      "community": "Community",
+      "qq": "QQ",
+      "discord": "Discord",
+      "bilibili": "Bilibili"
+    }
+  },
+  "home": {
+    "title": "ImpartLabServer",
+    "join": "Join server now",
+    "photoDesc": "Photo of the town of Impart, taken in 2025.2",
+    "morning": "Good morning!",
+    "afternoon": "Good afternoon!",
+    "night": "Good evening!"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "language": "中文",
+  "footer": {
+    "copyright": "版权所有 © 2025 Impart Lab团队",
+    "about": {
+      "aboutServer": "关于服务器",
+      "guidebook": "服务器手册",
+      "announcement": "公告发布栏",
+      "moment": "纪念馆"
+    },
+    "status": {
+      "status": "服务器状态",
+      "serverStatus": "服务器状态",
+      "worldMap": "卫星地图"
+    },
+    "support": {
+      "support": "帮助",
+      "joinUs": "加入团队",
+      "suggest": "意见箱",
+      "issue": "问题库",
+      "report": "违规申诉"
+    },
+    "contribute": {
+      "contribute": "贡献",
+      "contributor": "贡献者名单",
+      "donate": "赞助"
+    },
+    "community": {
+      "community": "社区",
+      "qq": "QQ群",
+      "discord": "Discord频道",
+      "bilibili": "哔哩哔哩"
+    }
+  },
+  "home": {
+    "title": "ImpartLab服务器",
+    "join": "加入服务器",
+    "photoDesc": "Impart镇合影，摄于2025.2",
+    "morning": "早上好！",
+    "afternoon": "下午好！",
+    "night": "晚上好！"
+  }
+}
