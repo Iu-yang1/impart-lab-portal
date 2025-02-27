@@ -1,11 +1,13 @@
 <template>
-  <div class="t0">
+  <div class="home-wrapper">
     <Header/>
     <div class="t1">
       <div class="t2">
         <div class="t3" style="position: absolute;left: 5%;bottom: 5%">
           <h1 style="color: aliceblue">{{$t('home.title')}}</h1>
-          <h2 style="color: aliceblue;font-weight: normal">{{this.msg}}</h2>
+          <h2 style="color: aliceblue;font-weight: normal" v-if="this.timeRange === 1">{{$t('home.morning')}}</h2>
+          <h2 style="color: aliceblue;font-weight: normal" v-if="this.timeRange === 2">{{$t('home.afternoon')}}</h2>
+          <h2 style="color: aliceblue;font-weight: normal" v-if="this.timeRange === 3">{{$t('home.night')}}</h2>
         </div>
         <div class="t3-1" style="position: absolute;right: 5%;bottom: 5%;gap: 10px;display: flex;align-items: end;flex-direction: column">
           <div style="text-align: center;color: #1a1a1a;background-color: aliceblue;border-radius: 20px;border: #1a1a1a solid 3px;padding: 10px;width: 150px">{{$t('home.join')}}{{' >'}}</div>
@@ -34,20 +36,20 @@ import Footer from "./Footer.vue";
 export default {
   data() {
     return {
-      msg: 'Welcome!'
+      timeRange: 0
     }
   },
   mounted() {
     const now = new Date();
-    /*if (now.getHours() >= 5 && now.getHours() < 12) {
-      this.msg = this.$i18n.t('home.morning');
+    if (now.getHours() >= 5 && now.getHours() < 12) {
+      this.timeRange = 1;
     } else if (now.getHours() >= 12 && now.getHours() < 18) {
-      this.msg = this.$i18n.t('home.afternoon');
+      this.timeRange = 2;
     } else if (now.getHours() >= 18 && now.getHours() < 5) {
-      this.msg = this.$i18n.t('home.night');
+      this.timeRange = 3;
     } else {
-      this.msg= 'Welcome!';
-    }*/
+      this.timeRange = 0;
+    }
   },
   components: {Footer, Header}
 }
@@ -60,7 +62,7 @@ export default {
   height: 400px;
   position: relative;
 }
-.t0 {
+.home-wrapper {
   position: relative;
   background-color: #1a1a1a;
 }

@@ -3,16 +3,16 @@
 </script>
 
 <template>
-  <div class="t0">
+  <div class="header-wrapper">
     <div class="t1">
-      <div class="t2">
-
-      </div>
+      <img class="t2" v-on:click="forward('/home')" src="/logo.png" alt="">
+      <div style="display: flex;">
         <h1 class="t2-1" v-on:click="forward('/guidebook')">{{$t('footer.about.guidebook')}}</h1>
         <h1 class="t2-1" v-on:click="forward('/status')">{{$t('footer.status.serverStatus')}}</h1>
         <h1 class="t2-1" v-on:click="forward('/worldMap')">{{$t('footer.status.worldMap')}}</h1>
         <h1 class="t2-1" v-on:click="forward('/issue')">{{$t('footer.support.issue')}}</h1>
       </div>
+    </div>
     <div class="t1">
       <div class="t2-2">
         <img src="../assets/language.svg" class="t2-3" style="height: 20px;width: 30px;position:relative;top:3px" alt="" v-on:click="() => this.isLanOpen = !this.isLanOpen"/>
@@ -101,23 +101,30 @@ h1 {
 .t2 {
   height: 35px;
   width: 35px;
+  position: absolute;
+  left:7%;
   background-color: #e16221;
 }
+.t2:hover {
+  cursor: pointer;
+}
 .t1 {
+  padding-left: 12%;
   align-items: center;
   display: flex;
   gap:20px;
 }
-.t0 {
+.header-wrapper {
   background-color: #1a1a1a;
   box-sizing: border-box;
   width: 100%;
   position: sticky;
   top: 0;
   display: flex;
-  padding: 10px 7%;
+  padding: 10px 7% 10px 0;
   border-bottom: 3px solid;
   border-color: #e16221;
   justify-content: space-between;
+  z-index: 1000;
 }
 </style>

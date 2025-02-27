@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="t0">
+  <div class="footer-wrapper">
     <div class="t1">
       <div class="t2">
         <h1>{{$t('footer.about.aboutServer')}}</h1>
@@ -13,8 +13,8 @@
       </div>
       <div class="t2">
         <h1>{{$t('footer.status.status')}}</h1>
-        <h2 v-on:click="forward(0)">{{$t('footer.status.serverStatus')}}</h2>
-        <h2 v-on:click="forward(0)">{{$t('footer.status.worldMap')}}</h2>
+        <h2 v-on:click="forward('/status')">{{$t('footer.status.serverStatus')}}</h2>
+        <h2 v-on:click="forward('/worldMap')">{{$t('footer.status.worldMap')}}</h2>
       </div>
       <div class="t2">
         <h1>{{$t('footer.support.support')}}</h1>
@@ -37,17 +37,19 @@
     </div>
     <div class="t1-1"/>
     <div class="t1-2">
-      <div style="height: 10px;width: 10px;top:100%;background-color: #e16221"/>
+      <img src="/logo.png" alt="" style="height: 10px;width: 10px;top:100%;"/>
       <h2>{{$t('footer.copyright')}}</h2>
     </div>
   </div>
 </template>
 
 <script>
+import router from "../common/router.js";
+
 export default {
   methods: {
     forward(val) {
-      console.log(val)
+      router.push({path: val})
     }
   }
 }
@@ -97,11 +99,11 @@ h2:hover {
   display: flex;
   box-sizing: border-box;
   width: 100%;
-  padding-left: 7%;
-  padding-right: 7%;
+  padding-left: 12%;
+  padding-right: 12%;
   flex-direction: row;
 }
-.t0 {
+.footer-wrapper {
   background-color: #292e33 !important;
   display: flex;
   align-items: center;

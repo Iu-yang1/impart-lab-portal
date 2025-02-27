@@ -4,7 +4,7 @@
 
 <template>
   <div class="t0">
-    <h1>gss</h1>
+    <h1>施工中</h1>
   </div>
 </template>
 
