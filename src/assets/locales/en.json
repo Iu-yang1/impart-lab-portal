@@ -33,11 +33,13 @@
     }
   },
   "home": {
-    "title": "ImpartLabServer",
+    "title": "Server",
     "join": "Join server now",
     "photoDesc": "Photo of the town of Impart, taken in 2025.2",
     "morning": "Good morning!",
     "afternoon": "Good afternoon!",
-    "night": "Good evening!"
+    "night": "Good evening!",
+    "desc-1-title": "Join the community with over 80 players",
+    "desc-1-content": "So I have come down to rescue them from the convention and to bring them up out of that land in to a good and spacious land, the To'hajiilee."
   }
 }

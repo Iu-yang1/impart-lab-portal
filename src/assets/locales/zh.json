@@ -33,11 +33,13 @@
     }
   },
   "home": {
-    "title": "ImpartLab服务器",
+    "title": "服务器",
     "join": "加入服务器",
     "photoDesc": "Impart镇合影，摄于2025.2",
     "morning": "早上好！",
     "afternoon": "下午好！",
-    "night": "晚上好！"
+    "night": "晚上好！",
+    "desc-1-title": "为80+位玩家提供原版游戏体验支持",
+    "desc-1-content": "与其他玩家尽情在这个全新社区中建造城镇巨构、设计机器，或是小隐于野，建立自己的孑然于世之所。"
   }
 }

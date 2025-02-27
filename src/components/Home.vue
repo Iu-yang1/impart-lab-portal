@@ -2,26 +2,28 @@
   <div class="home-wrapper">
     <Header/>
     <div class="home-content">
-      <div class="home-big-pic">
-        <div class="t3" style="position: absolute;left: 5%;bottom: 5%">
-          <h1 style="color: aliceblue">{{$t('home.title')}}</h1>
-          <h2 style="color: aliceblue;font-weight: normal" v-if="this.timeRange === 1">{{$t('home.morning')}}</h2>
-          <h2 style="color: aliceblue;font-weight: normal" v-if="this.timeRange === 2">{{$t('home.afternoon')}}</h2>
-          <h2 style="color: aliceblue;font-weight: normal" v-if="this.timeRange === 3">{{$t('home.night')}}</h2>
+      <div class="home-big-pic-stack">
+        <div class="home-big-pic"/>
+        <div style="width:40%;display: flex;flex-direction: column;position: relative;left: 7%">
+          <h1 class="mf" style="color: #e16221;margin-bottom: 5px">{{'Impart Lab '}}</h1>
+          <h1 class="mf" style="color: aliceblue">{{$t('home.title')}}</h1>
+          <h2 class="mf" style="color: aliceblue;font-weight: normal" v-if="this.timeRange === 1">{{$t('home.morning')}}</h2>
+          <h2 class="mf" style="color: aliceblue;font-weight: normal" v-if="this.timeRange === 2">{{$t('home.afternoon')}}</h2>
+          <h2 class="mf" style="color: aliceblue;font-weight: normal" v-if="this.timeRange === 3">{{$t('home.night')}}</h2>
         </div>
-        <div class="t3-1" style="position: absolute;right: 5%;bottom: 5%;gap: 10px;display: flex;align-items: end;flex-direction: column">
-          <div style="text-align: center;color: #1a1a1a;background-color: aliceblue;border-radius: 20px;border: #1a1a1a solid 3px;padding: 10px;width: 150px">{{$t('home.join')}}{{' >'}}</div>
+        <div style="width:40%;gap: 10px;display: flex;align-items: end;flex-direction: column;position: relative;right: 7%">
+          <div class="mf" style="text-align: center;color: #1a1a1a;background-color: aliceblue;border-radius: 20px;border: #919191 solid 3px;padding: 10px;width: 130px">{{$t('home.join')}}{{' >'}}</div>
           <div style="display: flex;align-items: center;">
             <div style="height: 10px;width: 10px;background-color: #e16221;margin-right: 10px"/>
-            <h2 style="font-size: 20px;font-weight: normal;color: aliceblue">{{$t('home.photoDesc')}}</h2>
+            <h2 class="mf" style="font-size: 20px;font-weight: normal;color: aliceblue">{{$t('home.photoDesc')}}</h2>
           </div>
         </div>
       </div>
-      <div class="t2-1" style="display: flex;justify-content: center;align-items: center;padding: 50px;box-sizing: border-box;gap: 10%">
-        <div class="t3-2" style="width: 500px;height: 280px;background-color: #292e33;border-radius: 10px"/>
-        <div class="t3-3" style="display: flex;flex-direction: column;gap: 20px">
-          <div style="color: #e16221;font-weight: bolder;">——————————</div>
-          <div style="color: aliceblue;font-weight: lighter;width: 500px;word-break: break-word">——————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————</div>
+      <div class="home-desc-1">
+        <div class="home-desc-img"/>
+        <div style="width:500px;display: flex;flex-direction: column;gap: 20px">
+          <div class="mf" style="width:100%;color: #e16221;font-weight: bolder;font-size: 20px">{{$t('home.desc-1-title')}}</div>
+          <div class="mf" style="width:100%;display:flex;flex-wrap:wrap;color: aliceblue;font-weight: lighter;word-break: break-word;line-height: 28px">{{$t('home.desc-1-content')}}</div>
         </div>
       </div>
     </div>
@@ -45,7 +47,7 @@ export default {
       this.timeRange = 1;
     } else if (now.getHours() >= 12 && now.getHours() < 18) {
       this.timeRange = 2;
-    } else if (now.getHours() >= 18 && now.getHours() < 5) {
+    } else if ((now.getHours() >= 18 && now.getHours() <= 24) || (now.getHours() >= 0 && now.getHours() < 5)) {
       this.timeRange = 3;
     } else {
       this.timeRange = 0;
@@ -56,15 +58,50 @@ export default {
 </script>
 
 <style scoped>
+h1 {
+  margin: 0;
+}
+.home-desc-img {
+  background: url("/desc-1.png") no-repeat center;
+  background-size: cover;
+  width:500px;
+  height: 280px;
+  border-radius: 10px
+}
+.home-desc-1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 7%;
+  width: 100vw;
+  box-sizing: border-box;
+  gap: 7%;
+  row-gap: 30px;
+  flex-wrap: wrap;
+}
 .home-content {
   display: block;
   position: relative;
 }
-.home-big-pic {
-  background-color: #292e33;
-  width: 100%;
-  height: 400px;
+.home-big-pic-stack {
+  width: 100vw;
+  height: 500px;
+  margin: 0;
   position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  z-index: 1;
+}
+.home-big-pic {
+  background:
+    linear-gradient(to top, rgb(26, 26, 26) 0%, rgba(0, 0, 0, 0) 40%) bottom no-repeat,
+    url("/big-pic.png") no-repeat center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
 }
 .home-wrapper {
   position: relative;

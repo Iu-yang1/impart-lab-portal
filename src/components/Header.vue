@@ -7,10 +7,10 @@
     <div class="header-side" style="padding-left: 12%;">
       <img class="header-logo" v-on:click="forward('/home')" src="/logo.png" alt="">
       <div class="header-options">
-        <div class="header-option" v-on:click="forward('/guidebook')">{{$t('footer.about.guidebook')}}</div>
-        <div class="header-option" v-on:click="forward('/status')">{{$t('footer.status.serverStatus')}}</div>
-        <div class="header-option" v-on:click="forward('/worldMap')">{{$t('footer.status.worldMap')}}</div>
-        <div class="header-option" v-on:click="forward('/issue')">{{$t('footer.support.issue')}}</div>
+        <div class="header-option mf" v-on:click="forward('/guidebook')">{{$t('footer.about.guidebook')}}</div>
+        <div class="header-option mf" v-on:click="forward('/status')">{{$t('footer.status.serverStatus')}}</div>
+        <div class="header-option mf" v-on:click="forward('/worldMap')">{{$t('footer.status.worldMap')}}</div>
+        <div class="header-option mf" v-on:click="forward('/issue')">{{$t('footer.support.issue')}}</div>
       </div>
     </div>
     <div class="header-side" style="padding-right: 7%">
