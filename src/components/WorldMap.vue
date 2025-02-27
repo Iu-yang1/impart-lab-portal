@@ -1,15 +1,17 @@
-<script setup>
-
-</script>
-
 <template>
-  <div class="t0">
-    <h1>world-map</h1>
+  <div style="position: relative;background-color: #1a1a1a;height: 100%;">
+    <Header/>
+    <iframe src="https://map-s.impart-lab.tech/" width="100%" height="85%"/>
   </div>
 </template>
 
-<style scoped>
-.t0 {
-  background-color: #9bdafc;
+<script>
+import Header from "./Header.vue";
+
+export default {
+  components: {Header}
 }
+</script>
+
+<style scoped>
 </style>
