@@ -4,16 +4,16 @@
 
 <template>
   <div class="header-wrapper">
-    <div class="t1">
-      <img class="t2" v-on:click="forward('/home')" src="/logo.png" alt="">
-      <div style="display: flex;">
-        <h1 class="t2-1" v-on:click="forward('/guidebook')">{{$t('footer.about.guidebook')}}</h1>
-        <h1 class="t2-1" v-on:click="forward('/status')">{{$t('footer.status.serverStatus')}}</h1>
-        <h1 class="t2-1" v-on:click="forward('/worldMap')">{{$t('footer.status.worldMap')}}</h1>
-        <h1 class="t2-1" v-on:click="forward('/issue')">{{$t('footer.support.issue')}}</h1>
+    <div class="header-side" style="padding-left: 12%;">
+      <img class="header-logo" v-on:click="forward('/home')" src="/logo.png" alt="">
+      <div class="header-options">
+        <div class="header-option" v-on:click="forward('/guidebook')">{{$t('footer.about.guidebook')}}</div>
+        <div class="header-option" v-on:click="forward('/status')">{{$t('footer.status.serverStatus')}}</div>
+        <div class="header-option" v-on:click="forward('/worldMap')">{{$t('footer.status.worldMap')}}</div>
+        <div class="header-option" v-on:click="forward('/issue')">{{$t('footer.support.issue')}}</div>
       </div>
     </div>
-    <div class="t1">
+    <div class="header-side" style="padding-right: 7%">
       <div class="t2-2">
         <img src="../assets/language.svg" class="t2-3" style="height: 20px;width: 30px;position:relative;top:3px" alt="" v-on:click="() => this.isLanOpen = !this.isLanOpen"/>
         <div class="t3" v-if="this.isLanOpen">
@@ -52,8 +52,7 @@
 
 <style scoped>
 h1 {
-  color: aliceblue;
-  font-size: 18px;
+
 }
 .t4 {
   color: aliceblue;
@@ -88,28 +87,27 @@ h1 {
   display: block;
   position: relative;
 }
-.t2-1 {
+.header-option {
   display: block;
-  gap: 3px;
-  padding: 20px 20px;
-  margin: 0;
+  color: aliceblue;
+  font-size: 18px;
+  font-weight: bold;
 }
-.t2-1:hover {
+.header-option:hover {
   color: #e16221;
   cursor: pointer;
 }
-.t2 {
+.header-logo {
   height: 35px;
   width: 35px;
   position: absolute;
   left:7%;
   background-color: #e16221;
 }
-.t2:hover {
+.header-logo:hover {
   cursor: pointer;
 }
-.t1 {
-  padding-left: 12%;
+.header-side {
   align-items: center;
   display: flex;
   gap:20px;
@@ -121,10 +119,25 @@ h1 {
   position: sticky;
   top: 0;
   display: flex;
-  padding: 10px 7% 10px 0;
+  padding: 20px 0 20px 0;
+  gap:20px;
   border-bottom: 3px solid;
   border-color: #e16221;
   justify-content: space-between;
   z-index: 1000;
+}
+.header-options {
+  display: flex;
+  row-gap: 10px;
+  column-gap: 30px;
+  flex-wrap: wrap
+}
+@media (max-width: 760px) {
+  .header-options {
+    display: none;
+    row-gap: 10px;
+    column-gap: 30px;
+    flex-wrap: wrap
+  }
 }
 </style>

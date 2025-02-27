@@ -1,8 +1,8 @@
 <template>
   <div class="home-wrapper">
     <Header/>
-    <div class="t1">
-      <div class="t2">
+    <div class="home-content">
+      <div class="home-big-pic">
         <div class="t3" style="position: absolute;left: 5%;bottom: 5%">
           <h1 style="color: aliceblue">{{$t('home.title')}}</h1>
           <h2 style="color: aliceblue;font-weight: normal" v-if="this.timeRange === 1">{{$t('home.morning')}}</h2>
@@ -56,7 +56,11 @@ export default {
 </script>
 
 <style scoped>
-.t2 {
+.home-content {
+  display: block;
+  position: relative;
+}
+.home-big-pic {
   background-color: #292e33;
   width: 100%;
   height: 400px;
