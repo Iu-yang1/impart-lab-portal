@@ -62,7 +62,7 @@ h1 {
   margin: 0;
 }
 .home-desc-img {
-  background: url("/desc-1.png") no-repeat center;
+  background: url("https://x19.fp.ps.netease.com/file/67c1c103f947232aaf00bcacE4IbzaFN06") no-repeat center;
   background-size: cover;
   width:500px;
   height: 280px;
@@ -96,7 +96,7 @@ h1 {
 .home-big-pic {
   background:
     linear-gradient(to top, rgb(26, 26, 26) 0%, rgba(0, 0, 0, 0) 40%) bottom no-repeat,
-    url("/big-pic.png") no-repeat center;
+    url("https://x19.fp.ps.netease.com/file/67c1c0fc74897b279e31c241I6wYB02806") no-repeat center;
   background-size: cover;
   height: 100%;
   width: 100%;
