@@ -14,10 +14,3 @@ body {
   min-height: 100vh;
   width: 100vw;
 }
-@font-face {
-  font-family: "MinecraftFont";
-  src: url("./assets/Minecraft.ttf");
-}
-.mf {
-  font-family: MinecraftFont,serif,sans-serif;
-}
