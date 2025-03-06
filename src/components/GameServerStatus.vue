@@ -1,17 +1,23 @@
-<script>
-import Header from "./Header.vue";
-
-export default {
-  components: {Header}
-}
-</script>
-
 <template>
   <div class="gss-wrapper">
     <Header/>
-    <iframe src="https://status.impart-lab.tech/" width="100%" height="89%"/>
+    <iframe :src="serverStatusUrl" width="100%" height="89%"/>
   </div>
 </template>
+
+<script>
+import Header from "./Header.vue";
+import {SERVER_STATUS} from "../common/links.js";
+
+export default {
+  components: {Header},
+  data() {
+    return {
+      serverStatusUrl: SERVER_STATUS
+    }
+  }
+}
+</script>
 
 <style scoped>
 .gss-wrapper {

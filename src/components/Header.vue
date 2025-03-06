@@ -23,14 +23,15 @@
         </div>
       </div>
       <div/>
-      <img src="../assets/discord.svg" class="t2-3" alt=""/>
-      <img src="../assets/QQ.svg" class="t2-3" style="height: 20px;width: 20px" alt=""/>
+      <img v-on:click="joinDiscord" src="../assets/discord.svg" class="t2-3" alt=""/>
+      <img v-on:click="joinQQGroup" src="../assets/QQ.svg" class="t2-3" style="height: 20px;width: 20px" alt=""/>
     </div>
   </div>
 </template>
 
 <script>
   import router from "../common/router.js";
+  import { QQ_GROUP,DISCORD } from "../common/links.js";
 
   export default {
     data() {
@@ -39,6 +40,12 @@
       }
     },
     methods: {
+      joinQQGroup() {
+        window.open(QQ_GROUP);
+      },
+      joinDiscord() {
+        window.open(DISCORD);
+      },
       forward(val) {
         router.push({path: val})
       },

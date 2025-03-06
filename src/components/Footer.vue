@@ -30,9 +30,9 @@
       </div>
       <div class="footer-content-group">
         <h1>{{$t('footer.community.community')}}</h1>
-        <h2 v-on:click="forward(0)">{{$t('footer.community.qq')}}</h2>
-        <h2 v-on:click="forward(0)">{{$t('footer.community.discord')}}</h2>
-        <h2 v-on:click="forward(0)">{{$t('footer.community.bilibili')}}</h2>
+        <h2 v-on:click="joinQQGroup">{{$t('footer.community.qq')}}</h2>
+        <h2 v-on:click="joinDiscord">{{$t('footer.community.discord')}}</h2>
+        <h2 v-on:click="bilibili">{{$t('footer.community.bilibili')}}</h2>
       </div>
     </div>
     <div class="footer-divider"/>
@@ -45,9 +45,19 @@
 
 <script>
 import router from "../common/router.js";
+import {DISCORD, QQ_GROUP,BILIBILI} from "../common/links.js";
 
 export default {
   methods: {
+    joinQQGroup() {
+      window.open(QQ_GROUP);
+    },
+    joinDiscord() {
+      window.open(DISCORD);
+    },
+    bilibili() {
+      window.open(BILIBILI);
+    },
     forward(val) {
       router.push({path: val})
     }
