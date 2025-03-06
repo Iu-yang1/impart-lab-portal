@@ -7,7 +7,7 @@
     <div class="footer-content">
       <div class="footer-content-group">
         <h1>{{$t('footer.about.aboutServer')}}</h1>
-        <h2 v-on:click="forward(0)">{{$t('footer.about.guidebook')}}</h2>
+        <h2 v-on:click="forward('/guidebook')">{{$t('footer.about.guidebook')}}</h2>
         <h2 v-on:click="forward(0)">{{$t('footer.about.announcement')}}</h2>
         <h2 v-on:click="forward(0)">{{$t('footer.about.moment')}}</h2>
       </div>

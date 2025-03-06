@@ -9,9 +9,7 @@ export default {
 <template>
   <div class="gss-wrapper">
     <Header/>
-    <div class="gss-content">
-      <h1 class="mf" style="color: aliceblue">施工中，敬请期待！</h1>
-    </div>
+    <iframe src="https://status.impart-lab.tech/" width="100%" height="89%"/>
   </div>
 </template>
 
@@ -19,10 +17,6 @@ export default {
 .gss-wrapper {
   position: relative;
   background-color: #1a1a1a;
-}
-.gss-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 100%;
 }
 </style>

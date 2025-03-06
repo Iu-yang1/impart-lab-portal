@@ -14,7 +14,7 @@
       </div>
     </div>
     <div class="header-side" style="padding-right: 7%">
-      <div class="t2-2">
+      <div class="t2npm-2">
         <img src="../assets/language.svg" class="t2-3" style="height: 20px;width: 30px;position:relative;top:3px" alt="" v-on:click="() => this.isLanOpen = !this.isLanOpen"/>
         <div class="t3" v-if="this.isLanOpen">
           <div class="t4" v-on:click="changeLanguage('zh')">中文</div>
@@ -83,10 +83,7 @@ h1 {
 .t2-3:hover {
   cursor: pointer;
 }
-.t2-2 {
-  display: block;
-  position: relative;
-}
+
 .header-option {
   display: block;
   color: aliceblue;
