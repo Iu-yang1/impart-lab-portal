@@ -7,15 +7,15 @@
         <div style="width:40%;display: flex;flex-direction: column;position: relative;left: 7%">
           <h1 class="mf" style="color: #e16221;margin-bottom: 5px">{{'Impart Lab '}}</h1>
           <h1 class="mf" style="color: aliceblue">{{$t('home.title')}}</h1>
-          <h2 class="mf" style="color: aliceblue;font-weight: normal" v-if="this.timeRange === 1">{{$t('home.morning')}}</h2>
-          <h2 class="mf" style="color: aliceblue;font-weight: normal" v-if="this.timeRange === 2">{{$t('home.afternoon')}}</h2>
-          <h2 class="mf" style="color: aliceblue;font-weight: normal" v-if="this.timeRange === 3">{{$t('home.night')}}</h2>
+          <h2 class="mf" style="color: aliceblue;line-height:27px;font-weight: normal" v-if="this.timeRange === 1">{{$t('home.morning')}}</h2>
+          <h2 class="mf" style="color: aliceblue;line-height:27px;font-weight: normal" v-if="this.timeRange === 2">{{$t('home.afternoon')}}</h2>
+          <h2 class="mf" style="color: aliceblue;line-height:27px;font-weight: normal" v-if="this.timeRange === 3">{{$t('home.night')}}</h2>
         </div>
         <div style="width:40%;gap: 10px;display: flex;align-items: end;flex-direction: column;position: relative;right: 7%">
-          <div class="mf" style="text-align: center;color: #1a1a1a;background-color: aliceblue;border-radius: 20px;border: #919191 solid 3px;padding: 10px;width: 130px">{{$t('home.join')}}{{' >'}}</div>
+          <div class="mf home-join" v-on:click="joinQQGroup">{{$t('home.join')}}{{' >'}}</div>
           <div style="display: flex;align-items: center;">
             <div style="height: 10px;width: 10px;background-color: #e16221;margin-right: 10px"/>
-            <h2 class="mf" style="font-size: 20px;font-weight: normal;color: aliceblue">{{$t('home.photoDesc')}}</h2>
+            <h2 class="mf" style="line-height:22px;font-size: 12px;font-weight: normal;color: aliceblue">{{$t('home.photoDesc')}}</h2>
           </div>
         </div>
       </div>
@@ -34,6 +34,7 @@
 <script>
 import Header from "./Header.vue";
 import Footer from "./Footer.vue";
+import {QQ_GROUP} from "../common/links.js";
 
 export default {
   data() {
@@ -53,6 +54,11 @@ export default {
       this.timeRange = 0;
     }
   },
+  methods: {
+    joinQQGroup() {
+      window.open(QQ_GROUP);
+    },
+  },
   components: {Footer, Header}
 }
 </script>
@@ -60,6 +66,18 @@ export default {
 <style scoped>
 h1 {
   margin: 0;
+}
+.home-join {
+  text-align: center;
+  color: #1a1a1a;
+  background-color: aliceblue;
+  border-radius: 20px;
+  border: #919191 solid 3px;
+  padding: 10px;
+  width: 130px
+}
+.home-join:hover {
+  cursor: pointer;
 }
 .home-desc-img {
   background: url("https://x19.fp.ps.netease.com/file/67c1c103f947232aaf00bcacE4IbzaFN06") no-repeat center;

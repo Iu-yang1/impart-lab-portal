@@ -18,7 +18,7 @@
       </div>
       <div class="footer-content-group">
         <h1>{{$t('footer.support.support')}}</h1>
-        <h2 v-on:click="forward(0)">{{$t('footer.support.joinUs')}}</h2>
+        <h2 v-on:click="joinUs">{{$t('footer.support.joinUs')}}</h2>
         <h2 v-on:click="forward(0)">{{$t('footer.support.suggest')}}</h2>
         <h2 v-on:click="forward(0)">{{$t('footer.support.issue')}}</h2>
         <h2 v-on:click="forward(0)">{{$t('footer.support.report')}}</h2>
@@ -45,10 +45,13 @@
 
 <script>
 import router from "../common/router.js";
-import {DISCORD, QQ_GROUP,BILIBILI} from "../common/links.js";
+import {DISCORD, QQ_GROUP,BILIBILI,JOIN_US} from "../common/links.js";
 
 export default {
   methods: {
+    joinUs() {
+      window.open(JOIN_US);
+    },
     joinQQGroup() {
       window.open(QQ_GROUP);
     },
