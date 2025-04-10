@@ -1,7 +1,3 @@
-<script setup>
-
-</script>
-
 <template>
   <div class="header-wrapper">
     <div class="header-side" style="padding-left: 12%;">
@@ -10,13 +6,14 @@
         <div class="header-option mf" v-on:click="forward('/guidebook')">{{$t('footer.about.guidebook')}}</div>
         <div class="header-option mf" v-on:click="forward('/status')">{{$t('footer.status.serverStatus')}}</div>
         <div class="header-option mf" v-on:click="forward('/worldMap')">{{$t('footer.status.worldMap')}}</div>
-        <div class="header-option mf" v-on:click="forward('/issue')">{{$t('footer.support.issue')}}</div>
+        <!-- <div class="header-option mf" v-on:click="forward('/issue')">{{$t('footer.support.issue')}}</div> -->
+        <div class="header-option mf" v-on:click="toWhitelist()">{{$t('footer.support.whitelist')}}</div>
       </div>
     </div>
     <div class="header-side" style="padding-right: 7%">
       <div class="t2npm-2">
-        <img src="../assets/language.svg" class="t2-3" style="height: 20px;width: 30px;position:relative;top:3px" alt="" v-on:click="() => this.isLanOpen = !this.isLanOpen"/>
-        <div class="t3" v-if="this.isLanOpen">
+        <img src="../assets/language.svg" class="t2-3" style="height: 20px;width: 30px;position:relative;top:3px" alt="" v-on:click="() => isLanOpen = !isLanOpen"/>
+        <div class="t3" v-if="isLanOpen">
           <div class="t4" v-on:click="changeLanguage('zh')">中文</div>
           <div style="height: 1px;width: 100%;background-color: #e16221;margin-top: 5px;margin-bottom: 5px"/>
           <div class="t4" v-on:click="changeLanguage('en')">English</div>
@@ -27,40 +24,69 @@
       <img v-on:click="joinQQGroup" src="../assets/QQ.svg" class="t2-3" style="height: 20px;width: 20px" alt=""/>
     </div>
   </div>
+  <ConfirmDialog
+    v-model="showConfirmDialog"
+    :title="$t('common.confirm')"
+    @confirm="handleConfirm"
+    @cancel="handleCancel"
+  >
+    <p style="color: aliceblue">{{ $t('msg.1') }}</p>
+  </ConfirmDialog>
 </template>
 
 <script>
-  import router from "../common/router.js";
-  import { QQ_GROUP,DISCORD } from "../common/links.js";
+import router from "../common/router.js";
+import { QQ_GROUP, DISCORD, WHITELIST } from "../common/links.js";
+import ConfirmDialog from './ConfirmDialog.vue';
+import { eventBus } from '../common/eventBus.js';
 
-  export default {
-    data() {
-      return {
-        isLanOpen: false
-      }
+export default {
+  components: {
+    ConfirmDialog
+  },
+  data() {
+    return {
+      showConfirmDialog: false,
+      isLanOpen: false
+    }
+  },
+  created() {
+    eventBus.on('showWhitelist', () => {
+      this.toWhitelist();
+    });
+  },
+  beforeUnmount() {
+    eventBus.off('showWhitelist');
+  },
+  methods: {
+    handleConfirm() {
+      this.showConfirmDialog = false;
+      window.open(WHITELIST);
     },
-    methods: {
-      joinQQGroup() {
-        window.open(QQ_GROUP);
-      },
-      joinDiscord() {
-        window.open(DISCORD);
-      },
-      forward(val) {
-        router.push({path: val})
-      },
-      changeLanguage(lang) {
-        this.$i18n.locale = lang;
-        this.isLanOpen = false;
-      }
+    handleCancel() {
+      this.showConfirmDialog = false;
+    },
+    joinQQGroup() {
+      window.open(QQ_GROUP);
+    },
+    joinDiscord() {
+      window.open(DISCORD);
+    },
+    toWhitelist() {
+      this.showConfirmDialog = true;
+    },
+    forward(val) {
+      router.push({path: val});
+    },
+    changeLanguage(lang) {
+      this.$i18n.locale = lang;
+      this.isLanOpen = false;
     }
   }
+}
 </script>
 
 <style scoped>
-h1 {
-
-}
 .t4 {
   color: aliceblue;
   font-size: 13px;

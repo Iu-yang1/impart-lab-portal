@@ -1,5 +1,9 @@
 {
   "language": "English",
+  "common": {
+    "confirm": "Confirm",
+    "cancel": "Cancel"
+  },
   "footer": {
     "copyright": "Copyright © 2025 Impart Lab.Org",
     "about": {
@@ -18,7 +22,8 @@
       "joinUs": "Join us",
       "suggest": "Suggest",
       "issue": "Issue",
-      "report": "Report"
+      "report": "Report",
+      "whitelist": "Whitelist"
     },
     "contribute": {
       "contribute": "Contribute",
@@ -41,5 +46,8 @@
     "night": "Good evening!",
     "desc-1-title": "Join the community with over 80 players",
     "desc-1-content": "So I have come down to rescue them from the convention and to bring them up out of that land in to a good and spacious land, the To'hajiilee."
+  },
+  "msg": {
+    "1": "Have you read the server guidebook? We recommend you read the guidebook before joining the server to avoid unnecessary trouble."
   }
 }
