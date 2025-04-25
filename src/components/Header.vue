@@ -7,7 +7,7 @@
         <div class="header-option mf" v-on:click="forward('/status')">{{$t('footer.status.serverStatus')}}</div>
         <div class="header-option mf" v-on:click="forward('/worldMap')">{{$t('footer.status.worldMap')}}</div>
         <!-- <div class="header-option mf" v-on:click="forward('/issue')">{{$t('footer.support.issue')}}</div> -->
-        <div class="header-option mf" v-on:click="toWhitelist()">{{$t('footer.support.whitelist')}}</div>
+        <!-- <div class="header-option mf" v-on:click="toWhitelist()">{{$t('footer.support.whitelist')}}</div> -->
       </div>
     </div>
     <div class="header-side" style="padding-right: 7%">

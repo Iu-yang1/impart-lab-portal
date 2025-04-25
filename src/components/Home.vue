@@ -12,12 +12,16 @@
           <h2 class="mf" style="color: aliceblue;line-height:27px;font-weight: normal" v-if="this.timeRange === 3">{{$t('home.night')}}</h2>
         </div>
         <div style="width:40%;gap: 10px;display: flex;align-items: end;flex-direction: column;position: relative;right: 7%">
-          <div class="mf home-join" v-on:click="joinQQGroup">{{$t('home.join')}}{{' >'}}</div>
           <div style="display: flex;align-items: center;">
             <div style="height: 10px;width: 10px;background-color: #e16221;margin-right: 10px"/>
             <h2 class="mf" style="line-height:22px;font-size: 12px;font-weight: normal;color: aliceblue">{{$t('home.photoDesc')}}</h2>
           </div>
         </div>
+      </div>
+      <div class="home-desc-1" style="padding-bottom: 10px;display: flex;align-items: center;justify-content: center;">
+        <div style="width: 30px;height: 1px;background-color: #e16221;"></div>
+        <div class="mf home-join" v-on:click="joinServer">{{$t('home.join')}}{{' >'}}</div>
+        <div style="width: 30px;height: 1px;background-color: #e16221;"></div>
       </div>
       <div class="home-desc-1">
         <div class="home-desc-img"/>
@@ -34,7 +38,7 @@
 <script>
 import Header from "./Header.vue";
 import Footer from "./Footer.vue";
-import {QQ_GROUP} from "../common/links.js";
+import {WHITELIST} from "../common/links.js";
 
 export default {
   data() {
@@ -55,8 +59,8 @@ export default {
     }
   },
   methods: {
-    joinQQGroup() {
-      window.open(QQ_GROUP);
+    joinServer() {
+      window.open(WHITELIST);
     },
   },
   components: {Footer, Header}
@@ -74,7 +78,8 @@ h1 {
   border-radius: 20px;
   border: #919191 solid 3px;
   padding: 10px;
-  width: 130px
+  width: 160px;
+  font-size: 20px;
 }
 .home-join:hover {
   cursor: pointer;
